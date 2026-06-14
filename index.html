@@ -60,37 +60,43 @@
             pointer-events: none !important;
         }
 
-       /* Banner logo responsif */
-.brand-banner {
-    width: min(100%, 300px);
-    margin: 1.5rem auto 1rem;
-    padding: 0.65rem 0.95rem;
-}
-
-.brand-banner--compact {
-    width: min(100%, 260px);
-}
-
-.brand-banner img {
-    max-height: 88px;
-}
-       @media (max-width: 640px) {
-    .brand-banner {
-        width: min(100%, 255px);
-        padding: 0.55rem 0.8rem;
-        border-radius: 1rem;
-        margin-top: 1.2rem;
-        margin-bottom: 0.9rem;
-    }
-
-    .brand-banner--compact {
-        width: min(100%, 230px);
-    }
-
-    .brand-banner img {
-        max-height: 76px;
-    }
-}
+        /* Banner logo responsif */
+        .brand-banner {
+            width: min(100%, 300px);
+            margin: 1.5rem auto 1rem;
+            padding: 0.65rem 0.95rem;
+            background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(240,249,255,0.95));
+            border: 1px solid rgba(56, 189, 248, 0.28);
+            border-radius: 1.1rem;
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.22), inset 0 1px 0 rgba(255,255,255,0.7);
+            backdrop-filter: blur(8px);
+        }
+        .brand-banner--compact {
+            width: min(100%, 260px);
+        }
+        .brand-banner img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 88px;
+            object-fit: contain;
+            object-position: center;
+        }
+        @media (max-width: 640px) {
+            .brand-banner {
+                width: min(100%, 255px);
+                padding: 0.55rem 0.8rem;
+                border-radius: 1rem;
+                margin-top: 1.2rem;
+                margin-bottom: 0.9rem;
+            }
+            .brand-banner--compact {
+                width: min(100%, 230px);
+            }
+            .brand-banner img {
+                max-height: 76px;
+            }
+        }
     </style>
 </head>
 <body class="relative flex items-center justify-center w-full h-full">
