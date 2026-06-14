@@ -59,6 +59,43 @@
             z-index: 1;
             pointer-events: none !important;
         }
+
+        /* Banner logo responsif */
+        .brand-banner {
+            width: min(100%, 260px);
+            margin: 0 auto 1rem;
+            padding: 0.55rem 0.85rem;
+            background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(240,249,255,0.95));
+            border: 1px solid rgba(56, 189, 248, 0.28);
+            border-radius: 1.1rem;
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.22), inset 0 1px 0 rgba(255,255,255,0.7);
+            backdrop-filter: blur(8px);
+        }
+        .brand-banner--compact {
+            width: min(100%, 230px);
+        }
+        .brand-banner img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 74px;
+            object-fit: contain;
+            object-position: center;
+        }
+        @media (max-width: 640px) {
+            .brand-banner {
+                width: min(100%, 220px);
+                padding: 0.45rem 0.7rem;
+                border-radius: 1rem;
+                margin-bottom: 0.85rem;
+            }
+            .brand-banner--compact {
+                width: min(100%, 200px);
+            }
+            .brand-banner img {
+                max-height: 62px;
+            }
+        }
     </style>
 </head>
 <body class="relative flex items-center justify-center w-full h-full">
@@ -93,8 +130,8 @@
         <!-- Splash Screen Utama -->
         <div id="screen-splash" class="screen flex flex-col items-center justify-center text-center max-w-lg w-full max-h-[90vh] overflow-y-auto custom-scroll p-4 sm:p-6 pointer-events-auto transition-all duration-500 scale-100 opacity-100 z-30">
             <!-- Banner Logo Kolaborasi Kampus & Sekolah -->
-            <div class="w-full max-w-[280px] bg-slate-950/60 border border-slate-800/80 p-2 rounded-2xl mb-4 shadow-lg">
-                <img src="Logo_SainsEdu.png" alt="Logo SainsEdu" class="w-full h-auto object-contain rounded-xl" onerror="this.onerror=null; this.src='https://placehold.co/400x200/0f172a/ffffff?text=SainsEdu';">
+            <div class="brand-banner" aria-label="Kop logo SainsEdu">
+                <img src="Logo_SainsEdu.png" alt="Logo SainsEdu" onerror="if(this.dataset.fallback!=='1'){this.dataset.fallback='1';this.src='Logo_SainsEdu.jpg';}else{this.onerror=null;this.src='https://placehold.co/400x140/ffffff/0f172a?text=SainsEdu';}">
             </div>
 
             <div class="pulse-effect mb-6">
@@ -124,8 +161,8 @@
         <!-- Menu Utama -->
         <div id="screen-menu" class="screen hidden flex-col items-center justify-center max-w-md w-full max-h-[90vh] overflow-y-auto custom-scroll p-4 pointer-events-auto transition-all duration-300 transform scale-95 opacity-0 z-30">
             <!-- Banner Logo Kolaborasi Kampus & Sekolah -->
-            <div class="w-full max-w-[240px] bg-slate-950/60 border border-slate-800/80 p-1.5 rounded-2xl mb-4 shadow-lg">
-                <img src="Logo_SainsEdu.png" alt="Logo SainsEdu" class="w-full h-auto object-contain rounded-xl" onerror="this.onerror=null; this.src='https://placehold.co/400x200/0f172a/ffffff?text=SainsEdu';">
+            <div class="brand-banner brand-banner--compact" aria-label="Kop logo SainsEdu">
+                <img src="Logo_SainsEdu.png" alt="Logo SainsEdu" onerror="if(this.dataset.fallback!=='1'){this.dataset.fallback='1';this.src='Logo_SainsEdu.jpg';}else{this.onerror=null;this.src='https://placehold.co/400x140/ffffff/0f172a?text=SainsEdu';}">
             </div>
 
             <h2 class="text-3xl font-extrabold text-white mb-6 font-kids tracking-wide drop-shadow-[0_2px_4px_rgba(15,23,42,0.8)]">MENU UTAMA</h2>
