@@ -75,7 +75,7 @@
     background: linear-gradient(135deg, #020617 0%, #0f172a 45%, #082f49 100%);
 
     /* Line putih */
-    border: 2px solid rgba(255, 255, 255, 0.95);
+    border: 1.5px solid rgba(255, 255, 255, 0.75);
 
     border-radius: 1.1rem;
 
@@ -99,6 +99,9 @@
             max-height: 88px;
             object-fit: contain;
             object-position: center;
+
+        /* Biar logo lebih hidup di background hitam */
+            filter: drop-shadow(0 3px 8px rgba(255, 255, 255, 0.25));
         }
         @media (max-width: 640px) {
             .brand-banner {
