@@ -64,58 +64,71 @@
             pointer-events: none !important;
         }
 
-        /* Banner logo responsif */
-        
-.brand-banner {
-    width: min(100%, 300px);
-    margin: 1.5rem auto 1rem;
-    padding: 0.65rem 0.95rem;
-
-    /* Background hitam dengan gradasi sesuai tema */
-    background: linear-gradient(135deg, #020617 0%, #0f172a 45%, #082f49 100%);
-
-    /* Line putih */
-    border: 1.5px solid rgba(255, 255, 255, 0.75);
-
-    border-radius: 1.1rem;
-
-    /* Shadow dan glow tema biru-hijau */
-    box-shadow:
-        0 12px 28px rgba(15, 23, 42, 0.35),
-        0 0 18px rgba(56, 189, 248, 0.35),
-        0 0 28px rgba(16, 185, 129, 0.18),
-        inset 0 1px 0 rgba(255, 255, 255, 0.35);
-
-    backdrop-filter: blur(8px);
-}
-        
-        .brand-banner--compact {
-            width: min(100%, 260px);
+        /* Banner logo responsif tanpa kotak */
+        .brand-banner {
+            position: relative;
+            width: min(100%, 320px);
+            margin: 1.35rem auto 0.75rem;
+            padding: 0;
+            background: transparent;
+            border: 0;
+            border-radius: 0;
+            box-shadow: none;
+            backdrop-filter: none;
+            isolation: isolate;
         }
+
+        /* Cahaya lembut di belakang logo, bukan kotak */
+        .brand-banner::before {
+            content: "";
+            position: absolute;
+            inset: 8% 4%;
+            z-index: -1;
+            border-radius: 999px;
+            background:
+                radial-gradient(circle at 50% 45%, rgba(255,255,255,0.72), rgba(255,255,255,0.18) 36%, transparent 70%),
+                radial-gradient(circle at 35% 55%, rgba(56,189,248,0.38), transparent 62%),
+                radial-gradient(circle at 70% 55%, rgba(16,185,129,0.28), transparent 62%);
+            filter: blur(18px);
+            opacity: 0.9;
+            pointer-events: none;
+        }
+
+        .brand-banner--compact {
+            width: min(100%, 230px);
+            margin-top: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
         .brand-banner img {
             display: block;
             width: 100%;
             height: auto;
-            max-height: 88px;
+            max-height: 108px;
             object-fit: contain;
             object-position: center;
-
-        /* Biar logo lebih hidup di background hitam */
-            filter: drop-shadow(0 3px 8px rgba(255, 255, 255, 0.25));
+            filter:
+                drop-shadow(0 2px 2px rgba(255,255,255,0.8))
+                drop-shadow(0 8px 18px rgba(2,132,199,0.45))
+                drop-shadow(0 0 12px rgba(16,185,129,0.25));
+            transform: translateZ(0);
         }
+
         @media (max-width: 640px) {
             .brand-banner {
-                width: min(100%, 255px);
-                padding: 0.55rem 0.8rem;
-                border-radius: 1rem;
-                margin-top: 1.2rem;
-                margin-bottom: 0.9rem;
+                width: min(100%, 285px);
+                margin-top: 1.15rem;
+                margin-bottom: 0.8rem;
             }
+
             .brand-banner--compact {
-                width: min(100%, 180px);
+                width: min(100%, 200px);
+                margin-top: 0.65rem;
+                margin-bottom: 0.85rem;
             }
+
             .brand-banner img {
-                max-height: 76px;
+                max-height: 96px;
             }
         }
     </style>
